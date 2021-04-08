@@ -5,4 +5,4 @@
 #     "content": "Affirmative"
 # }
 
-# GET http://localhost:4001/posts/d9dcf142/comments
+GET http://localhost:4001/posts/d9dcf142/comments
