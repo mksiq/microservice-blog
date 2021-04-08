@@ -6,10 +6,19 @@ export default function CommentCreate({ postId }) {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.post(`http://localhost:4001/posts/${postId}/commments`, {
-      content
-    });
+    try {
+
+        await axios.post(`http://localhost:4001/posts/${postId}/comments`, {
+            content
+        });
+    } catch(e) {
+        console.log(postId)
+        console.log(e)
+    }
     setContent("");
+    console.log(postId)
+    console.log("tried to submit")
+    console.log(content)
   };
 
   return (
@@ -20,7 +29,7 @@ export default function CommentCreate({ postId }) {
           <input
             className="form-control"
             value={content}
-            onChance={(e) => setContent(e.target.value)}
+            onChange={(e) => setContent(e.target.value)}
           />
         </div>
         <button className="btn brn-primary">Submit</button>

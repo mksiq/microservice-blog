@@ -1,8 +1,8 @@
-POST http://localhost:4001/posts/1/comments
-Content-Type: application/json
+# POST http://localhost:4001/posts/d9dcf142/comments
+# Content-Type: application/json
 
-{
-    "content": "Affirmative"
-}
+# {
+#     "content": "Affirmative"
+# }
 
-# GET http://localhost:4001/posts/1/comments
+# GET http://localhost:4001/posts/d9dcf142/comments
