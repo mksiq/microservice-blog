@@ -2,7 +2,7 @@ const express = require("express");
 const { randomBytes } = require("crypto");
 const { json } = require("express");
 const cors = require("cors");
-const axios = require("cors");
+const axios = require("axios");
 
 const app = express();
 
@@ -35,6 +35,11 @@ app.post("/posts/:id/comments", async (req, res) => {
   });
 
   res.status(201).send(comments);
+});
+
+app.post("/events", (req, res) => {
+  console.log("Received Event", req.body.type);
+  res.send({});
 });
 
 app.listen(4001, () => {
