@@ -21,7 +21,7 @@ app.post("/posts/:id/comments", async (req, res) => {
   const commentId = randomBytes(4).toString("hex");
   const { content } = req.body;
   const comments = commentsByPostId[req.params.id] || [];
-  comments.push({ id: commentId, content });
+  comments.push({ id: commentId, content, status: "pending" });
   console.log("Created comment");
   commentsByPostId[req.params.id] = comments;
 
@@ -43,5 +43,5 @@ app.post("/events", (req, res) => {
 });
 
 app.listen(4001, () => {
-  console.log("Listening at port 4001: http://localhost:4001");
+  console.log("Comments Listening at port 4001");
 });
