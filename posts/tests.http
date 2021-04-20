@@ -1,8 +1,24 @@
 # POST http://localhost:4000/posts
+# POST http://192.168.49.2:31987/posts/create
+
 # Content-Type: application/json
 
 # {
 #     "title": "Hello"
 # }
 
-GET http://localhost:4000/posts
+# minikube ip
+# kubectl get services
+# GET http://192.168.49.2:31987/posts
+
+# GET http://192.168.49.2:31987/posts
+
+GET http://posts.com/posts
+
+# POST http://posts.com/posts/create
+
+# Content-Type: application/json
+
+# {
+#     "title": "Hello"
+# }

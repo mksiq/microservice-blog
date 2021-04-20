@@ -13,10 +13,10 @@ app.post("/events", (req, res) => {
 
   events.push(event);
 
-  axios.post("http://localhost:4000/events", event);
-  axios.post("http://localhost:4001/events", event);
-  axios.post("http://localhost:4002/events", event);
-  axios.post("http://localhost:4003/events", event);
+  axios.post("http://posts-clusterip-srv:4000/events", event);
+  axios.post("http://comments-srv:4001/events", event);
+  axios.post("http://query-srv:4002/events", event);
+  axios.post("http://moderation-srv:4003/events", event);
 
   console.log("Received Event", req.body.type);
 
@@ -28,5 +28,6 @@ app.get("/events", (req, res) => {
 });
 
 app.listen(4005, () => {
+  console.log('running on Kubernetes')
   console.log("Event listening on 4005");
 });
